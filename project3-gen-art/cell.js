@@ -6,7 +6,7 @@ class Cell {
     this.h = h
     this.row = row
   }
-  display() {
+  displayCell() {
     if (this.row % 2 == 0) {
       line(this.x, this.y, this.w + this.x, this.h + this.y)
     } else {
