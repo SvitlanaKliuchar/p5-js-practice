@@ -22,8 +22,6 @@ function setup() {
 function draw() {
   background(220);
 
-
-  // Create new Butterfly instances along mouse trails
   if (mouseIsPressed) {
     let trailButterfly = new Butterfly(mouseX, mouseY, w, h);
     trails.push(trailButterfly);
@@ -31,16 +29,14 @@ function draw() {
 
   if (trails.length > 100) trails.shift();
 
-  // Display cells instead of ellipse
-  stroke(0);
-  for (let butterfly of trails) {
-    butterfly.displayButterfly();
+  for(let b of trails) {
+    b.move();             
+    b.displayButterfly();
   }
 
 }
 
 
-// Resize canvas when window size changes
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 
